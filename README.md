@@ -2,7 +2,9 @@
 
 > Surveillance-device detector for the ESP32-2432S028R ("Cheap Yellow Display").
 
-> **Hosyond E32R32P port:** This fork is based on
+> **Ported and hardware-tested for the Hosyond 3.2'' ESP32 LCD Display
+> Resistive Touchscreen with WiFi+BT, ST7789P3 Driver, 240x320 TFT
+> (`E32R32P`).** This fork is based on
 > [SquachWatch-CYD](https://github.com/skizzophrenic/SquachWatch-CYD), created
 > and maintained by **TalkingSasquach** (`@skizzophrenic`). The original Git
 > history and GPL-3.0 license are preserved. This fork adds the tested Hosyond

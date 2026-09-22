@@ -1,5 +1,9 @@
 # Hosyond 3.2-inch E32R32P
 
+**Supported product:** Hosyond 3.2'' ESP32 LCD Display Resistive Touchscreen
+with WiFi+BT, ST7789P3 Driver, 240x320 TFT (`E32R32P`). This port has been
+compiled, flashed, touch-calibrated, and tested on the physical board.
+
 This is a hardware port of
 [SquachWatch-CYD](https://github.com/skizzophrenic/SquachWatch-CYD), created
 by **TalkingSasquach** (`@skizzophrenic`). The original project, history, and
