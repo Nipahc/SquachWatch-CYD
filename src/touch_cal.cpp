@@ -9,12 +9,26 @@ namespace TouchCal {
 // The Fit lives in its own namespace, so a firmware that predates it (or a
 // rollback to one) never trips over it, and the old keys below stay exactly
 // where older firmware left them.
+#if defined(HOSYOND32)
+// USB uploads preserve NVS. The E32R32P has the same 240x320 native panel
+// dimensions as the ordinary CYD, so the generic size check cannot tell an
+// old 2.8-inch calibration from one made for this board. The two digitisers
+// use different buses/orientations; accepting the old affine fit can map every
+// otherwise-valid press off-screen. Keep this board's calibration separate so
+// the first Hosyond build always asks for its own measurements.
+static const char* FIT_NS  = "touchfit32";
+#else
 static const char* FIT_NS  = "touchfit";
+#endif
 static const char* FIT_KEY = "fit";
 static const uint8_t FIT_VERSION = 1;
 
 // Where the calibrations written by older firmware live -- read-only now.
+#if defined(HOSYOND32)
+static const char* NS = "touchcal32";
+#else
 static const char* NS = "touchcal";
+#endif
 
 static const uint16_t GREEN = 0x07E0;
 static const uint16_t AMBER = 0xFD20;

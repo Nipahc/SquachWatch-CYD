@@ -2,6 +2,13 @@
 
 > Surveillance-device detector for the ESP32-2432S028R ("Cheap Yellow Display").
 
+> **Hosyond E32R32P port:** This fork is based on
+> [SquachWatch-CYD](https://github.com/skizzophrenic/SquachWatch-CYD), created
+> and maintained by **TalkingSasquach** (`@skizzophrenic`). The original Git
+> history and GPL-3.0 license are preserved. This fork adds the tested Hosyond
+> 3.2-inch ST7789P3/XPT2046 board profile; see
+> [docs/HOSYOND32.md](docs/HOSYOND32.md).
+
 SquachWatch-CYD sniffs the 2.4 GHz airwaves for known wireless signatures
 of Flock Safety cameras, Axon body cameras, recording glasses, card
 skimmers, AirTags, drones, proximity beacons and pentest hardware. It runs
@@ -456,6 +463,12 @@ SquachWatch-CYD/
 
 ## Credits
 
+- Original SquachWatch-CYD project, application, interface, artwork, and
+  detection engine: **TalkingSasquach**
+  ([@skizzophrenic](https://github.com/skizzophrenic)).
+- Hosyond/LCDWIKI E32R32P hardware reference and diagnostic measurements:
+  **iamankushpandit**, from the GPL-3.0
+  [Gume project](https://github.com/iamankushpandit/Gume).
 - Flock Safety OUI research: [@NitekryDPaul](https://x.com/NitekryDPaul),
   DeFlockJoplin, [`colonelpanichacks/flock-you`](https://github.com/colonelpanichacks/flock-you)
   (MIT).

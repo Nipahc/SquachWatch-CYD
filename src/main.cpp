@@ -396,7 +396,7 @@ static void drawCrashCard(TFT_eSPI& t) {
 #if defined(AWOK)
     #define TOUCH_ON_DISPLAY_BUS 1
 #endif
-#if defined(RLPHANTOM_R)
+#if defined(RLPHANTOM_R) || defined(HOSYOND32)
     #define TOUCH_RAW_SHARED_BUS 1
 #endif
 // Everything that is true of BOTH: no dedicated touch peripheral, so nothing
@@ -829,7 +829,10 @@ static bool rawReadResistive(int16_t& a, int16_t& b) {
     // garbage -- so this goes through TFT_eSPI's raw-touch accessors.
     // getTouchRaw() alone always returns true in TFT_eSPI 2.5.43, so the
     // actual "is a finger down" gate is the pressure threshold.
-    if (tft.getTouchRawZ() < 350) return false;
+    #ifndef TOUCH_PRESSURE_THRESHOLD
+        #define TOUCH_PRESSURE_THRESHOLD 350
+    #endif
+    if (tft.getTouchRawZ() < TOUCH_PRESSURE_THRESHOLD) return false;
     uint16_t rx, ry;
     tft.getTouchRaw(&rx, &ry);
     a = (int16_t)rx;
@@ -5035,6 +5038,8 @@ void loop() {
             info.boardName = "AWOK";
 #elif defined(CYD35)
             info.boardName = "cyd35 BETA";
+#elif defined(HOSYOND32)
+            info.boardName = "Hosyond E32R32P";
 #else
             info.boardName = "cyd";
 #endif
